@@ -1,8 +1,8 @@
 import QtQuick
 
 Window {
-    width: 640
-    height: 480
+    width: 960
+    height: 540
     visible: true
     title: qsTr("Game")
 
@@ -13,8 +13,8 @@ Window {
         height: 50
         color: "green"
 
-        x: 100
-        y: 100
+        x: control.x
+        y: control.y
 
         focus: true
 
@@ -22,19 +22,19 @@ Window {
         {
             if(event.key === Qt.Key_Left)
             {
-                move.x -= 10;
+                control.move_left()
             }
             if(event.key === Qt.Key_Right)
             {
-                move.x += 10;
+               control.move_right()
             }
             if(event.key === Qt.Key_Up)
             {
-                move.y -= 10;
+                  control.move_up()
             }
             if(event.key === Qt.Key_Down)
             {
-                move.y += 10;
+                  control.move_down()
             }
         }
     }
