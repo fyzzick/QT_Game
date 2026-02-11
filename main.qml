@@ -30,11 +30,7 @@ Window {
             }
             if(event.key === Qt.Key_Up)
             {
-                  control.move_up()
-            }
-            if(event.key === Qt.Key_Down)
-            {
-                  control.move_down()
+                  control.apply_thrust()
             }
         }
     }
