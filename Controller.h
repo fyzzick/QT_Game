@@ -42,47 +42,14 @@ public:
         }
     }
 
-    Q_INVOKABLE void move_left()
-    {
-        set_x(m_x - x_speed);
-        if(m_x < min_x)
-        {
-            set_x(min_x);
-        }
-    }
+    Q_INVOKABLE void move_left();
 
-    Q_INVOKABLE void move_right()
-    {
-        set_x(m_x + x_speed);
-        if(m_x > max_x)
-        {
-            set_x(max_x);
-        }
-    }
+    Q_INVOKABLE void move_right();
 
-    Q_INVOKABLE void apply_thrust()
-    {
-        y_speed = max_thrust;
-
-        if(m_y < bottom_y/1.5)
-        {
-            y_speed = 0;
-        }
-    }
+    Q_INVOKABLE void apply_thrust();
 
 public slots:
-    void update_state()
-    {
-        m_y += y_speed;
-        y_speed += gravity;
-
-        if(m_y > bottom_y)
-        {
-            m_y = bottom_y;
-        }
-
-        emit yChanged();
-    }
+    void update_state();
 
 signals:
     void xChanged();
